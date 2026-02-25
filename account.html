@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - BitAuto</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Navigation -->
+    <nav class="bg-blue-600 p-4">
+        <a href="index.html" class="text-white text-lg">Back to Home</a>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center mb-8">My Account</h1>
+
+        <div class="flex">
+            <!-- Sidebar Navigation -->
+            <div class="bg-gray-800 rounded-lg shadow-lg p-4 w-1/4 mr-6">
+                <h2 class="text-xl font-semibold mb-4">Account Navigation</h2>
+                <ul class="space-y-2">
+                    <li><a href="#profile" class="text-blue-500">Profile Overview</a></li>
+                    <li><a href="#reward" class="text-blue-500">My Rewards</a></li>
+                    <li><a href="#orders" class="text-blue-500">Order History</a></li>
+                    <li><a href="#settings" class="text-blue-500">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="flex-1 bg-gray-800 rounded-lg shadow-lg p-6">
+                <!-- User Profile Overview -->
+                <div id="profile" class="mb-6">
+                    <h2 class="text-2xl font-semibold mb-4">Profile Overview</h2>
+                    <p><strong>Name:</strong> John Doe</p>
+                    <p><strong>Wallet Address:</strong> 0x123456789ABCDEF123456789ABCDEF1234567890</p>
+                </div>
+
+                <!-- My Rewards Section -->
+                <div id="reward" class="mb-6">
+                    <h2 class="text-2xl font-semibold mb-4">My Rewards</h2>
+                    <p>You have <strong>100 Reward Points</strong> available!</p>
+                    <p>Earn rewards by making purchases and referring friends.</p>
+                </div>
+
+                <!-- Order History Section -->
+                <div id="orders" class="mb-6">
+                    <h2 class="text-2xl font-semibold mb-4">Order History</h2>
+                    <ul id="orderList" class="space-y-2">
+                        <li class="bg-gray-700 p-4 rounded">Order #12345 - Status: Delivered</li>
+                        <li class="bg-gray-700 p-4 rounded">Order #12346 - Status: Shipped</li>
+                        <li class="bg-gray-700 p-4 rounded">Order #12347 - Status: Processing</li>
+                    </ul>
+                </div>
+
+                <!-- Settings Section -->
+                <div id="settings">
+                    <h2 class="text-2xl font-semibold mb-4">Settings</h2>
+                    <div class="mb-4">
+                        <h3 class="font-semibold">Notifications</h3>
+                        <label class="inline-flex items-center mt-2">
+                            <input type="checkbox" checked class="form-checkbox h-5 w-5 text-blue-600"><span class="ml-2">Email Notifications</span>
+                        </label>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">Security</h3>
+                        <p>Change your password and review activity.</p>
+                        <a href="change-password.html" class="text-blue-500">Change Password</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
