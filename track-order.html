@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order - BitAuto</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Navigation -->
+    <nav class="bg-blue-600 p-4">
+        <a href="index.html" class="text-white text-lg">Back to Home</a>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Track Your Order</h1>
+
+        <div class="flex justify-center mb-6">
+            <input type="text" id="orderInput" placeholder="Enter Order ID or Wallet Address" class="p-3 rounded-md bg-gray-800 text-white border border-gray-700 w-1/2 focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <button onclick="trackOrder()" class="ml-2 px-4 py-3 bg-blue-600 rounded-md hover:bg-blue-700">Track</button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="w-full flex flex-col items-center">
+            <div class="relative w-full bg-gray-700 rounded-full h-2">
+                <div id="progressBar" class="absolute top-0 left-0 h-2 bg-blue-600 rounded-full transition-all duration-300"></div>
+            </div>
+            <div class="flex justify-between w-full mt-2">
+                <span>Order Placed</span>
+                <span>Processing</span>
+                <span>Shipped</span>
+                <span>Delivered</span>
+            </div>
+        </div>
+
+        <div id="statusMessage" class="mt-4 text-center"></div>
+    </div>
+
+    <script>
+        function trackOrder() {
+            const progressBar = document.getElementById('progressBar');
+            const statusMessage = document.getElementById('statusMessage');
+            const orderID = document.getElementById('orderInput').value;
+
+            // Example order tracking logic (replace with actual implementation)
+            if (orderID.trim() === '') {
+                statusMessage.innerText = 'Please enter a valid Order ID or Wallet Address.';
+                progressBar.style.width = '0%';
+                return;
+            }
+
+            // Simulate the tracking process
+            statusMessage.innerText = 'Order is being processed...';
+            progressBar.style.width = '25%';
+
+            setTimeout(() => {
+                statusMessage.innerText = 'Order has been shipped!';
+                progressBar.style.width = '75%';
+            }, 2000); // Simulate shipping time
+
+            setTimeout(() => {
+                statusMessage.innerText = 'Order has been delivered!';
+                progressBar.style.width = '100%';
+            }, 4000); // Simulate delivery time
+        }
+    </script>
+</body>
+</html>
